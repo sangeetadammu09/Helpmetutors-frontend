@@ -1,0 +1,211 @@
+ <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card hmt-card">
+          <h1 class="hmt-works">How it works!!
+            <hr>
+          </h1>
+          <h5><b>RECOGNIZE YOUR NEEDS</b></h5>
+          <p>Post your requirement and find a suitable tutor within minutes. Helpmetutors keep student's learning details
+            and area of weakness at the top of the priority list.</p>
+          <br />
+          <h5><b>DETERMINATION OF TUTOR</b></h5>
+          <p>Based on student's learning details and level of understanding. Helpmetutors select best tutor who is
+            qualified, experienced and has demonstrated reputation of best outcome.</p>
+          <br />
+          <h5><b>MASTERMIND DEMO </b></h5>
+          <p>Helpmetutors fix demo class as per your convenience. If you are not satisfied with demo, you can opt for
+            another.</p>
+          <br />
+          <h5><b>BEGIN LEARNING </b></h5>
+          <p>Once the student select teacher. Tutor start class as per the scheduled time & help the student with his
+            requirements. Student 's improvement will be tracked on a weekly basis</p>
+          <br />
+  
+        </div>
+  
+      </div>
+      <div class="col-md-8">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="hmt-parent">Looking for home tutors, online teachers, assignment help, homework guidance or any
+                such related requirement. Kindly fill the form below to hire a teacher today!!</h1>
+            
+               <form class="row parentForm" [formGroup]="addParentForm" (ngSubmit)="submitParentForm()">
+                <div class="col-md-6">
+                    <label for="name">Full Name<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid':
+                    (submitted && p['name'].errors) ||(p['name'].errors && p['name'].touched)}" />
+                    <div *ngIf="(submitted && p['name'].errors) ||(p['name'].errors && p['name'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['name'].errors['required']">
+                            Name is required
+                        </div>
+                   </div>
+
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email">Email Address<span style="color:red;">*</span></label>
+                      <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':
+                    (submitted && p['email'].errors) ||(p['email'].errors && p['email'].touched)}" />
+                    <div *ngIf="(submitted && p['email'].errors) ||(p['email'].errors && p['email'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['email'].errors['required']">Email is required</div>
+                        <div *ngIf="p['email'].errors['pattern']">Email is invalid</div>
+                   </div>
+                  </div>
+                
+                  <div class="col-md-6">
+                    <label for="phone">Contact<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="contact" [ngClass]="{'is-invalid':
+                    (submitted && p['contact'].errors) ||(p['contact'].errors && p['contact'].touched)}" />
+                    <div *ngIf="(submitted && p['contact'].errors) ||(p['contact'].errors && p['contact'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['contact'].errors['required']">Contact is required</div>
+                        <div *ngIf="p['contact'].errors['pattern']">Only Number are allowed</div>
+                   </div>
+                  </div>
+        
+                  <div class="col-md-6">
+                    <label for="location">Location<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="location" [ngClass]="{'is-invalid':
+                    (submitted && p['location'].errors) ||(p['location'].errors && p['location'].touched)}" />
+                    <div *ngIf="(submitted && p['location'].errors) ||(p['location'].errors && p['location'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['location'].errors['required']">Location is required</div>
+                       
+                   </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location">Looking for<span style="color:red;">*</span></label>
+                    <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="lookingfor"
+                    [ngClass]="{'is-invalid':(submitted && p['lookingfor'].errors) ||(p['lookingfor'].errors && p['lookingfor'].touched)}">
+                        <option disabled>Select</option>
+                         <option>Tutor</option>
+                        <option>Assignment Help</option>
+                    </select>
+                    <div *ngIf="(submitted && p['lookingfor'].errors) ||(p['lookingfor'].errors && p['lookingfor'].touched)" class="invalid-feedback">
+                      <div *ngIf="p['lookingfor'].errors['required']">Looking for is required</div>   
+                  </div>  
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location">Grade<span style="color:red;">*</span></label>
+                    <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="grade"
+                    [ngClass]="{'is-invalid':(submitted && p['grade'].errors) ||(p['grade'].errors && p['grade'].touched)}">
+                        <option disabled>Select</option>
+                        <option value="nursery">Nursery, Kindergarten</option>
+                        <option value="class1">class 1</option>
+                        <option value="class2">class 2</option>
+                        <option value="class3">class 3</option>
+                        <option value="class4">class 4</option>
+                        <option value="class5">class 5</option>
+                        <option value="class6">class 6</option>
+                        <option value="class7">class 7</option>
+                        <option value="class8">class 8</option>
+                        <option value="class9">class 9</option>
+                        <option value="class10">class 10</option>
+                        <option value="class11">class 11</option>
+                        <option value="class12">class 12</option>
+                        <option value="nursery">Intermediate</option>
+                        <option value="diploma">Diploma</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="postgraduate">Postgraduate</option>
+                        <option value="other">Other</option>
+                       
+                      </select>
+                      <div *ngIf="(submitted && p['grade'].errors) ||(p['grade'].errors && p['grade'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['grade'].errors['required']">Grade is required</div>   
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location">Subjects<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="subjects" [ngClass]="{'is-invalid':
+                    (submitted && p['subjects'].errors) ||(p['subjects'].errors && p['subjects'].touched)}" />
+                    <div *ngIf="(submitted && p['subjects'].errors) ||(p['subjects'].errors && p['subjects'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['subjects'].errors['required']">Subjects is required</div>
+                       
+                   </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="modeofteaching">Mode Of Teaching<span style="color:red;">*</span></label>
+                    <select  class="form-control form-select" id="modeofteaching" formControlName="modeofteaching"
+                    [ngClass]="{'is-invalid':(submitted && p['modeofteaching'].errors) ||(p['modeofteaching'].errors && p['modeofteaching'].touched)}">
+                      <option disabled>Select</option>
+                      <option value="home">Home</option>
+                      <option value="online">Online</option>
+                      <option value="tutorplace">Tutor's place</option>
+                    
+                    </select>
+                    <div *ngIf="(submitted && p['modeofteaching'].errors) ||(p['modeofteaching'].errors && p['modeofteaching'].touched)" class="invalid-feedback">
+                      <div *ngIf="p['modeofteaching'].errors['required']">Mode of teaching is required</div> 
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="gender">Gender Preference<span style="color:red;">*</span></label>
+                    <select class="form-control form-select" id="gender" formControlName="gender"
+                    [ngClass]="{'is-invalid':(submitted && p['modeofteaching'].errors) ||(p['modeofteaching'].errors && p['modeofteaching'].touched)}">
+                      <option disabled>Select</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                      <option value="nopreference">No preference</option>
+                    
+                    </select>
+                    <div *ngIf="(submitted && p['gender'].errors) ||(p['gender'].errors && p['gender'].touched)" class="invalid-feedback">
+                      <div *ngIf="p['gender'].errors['required']">Gender is required</div>
+                  </div>
+                  </div>
+
+                  <div class="col-md-6 d-flex">
+                    <div class="col-md-8">
+                    <label for="budget">Budget<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="budget" [ngClass]="{'is-invalid':
+                    (submitted && p['budget'].errors) ||(p['budget'].errors && p['budget'].touched)}" />
+                    <div *ngIf="(submitted && p['budget'].errors) ||(p['budget'].errors && p['budget'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['budget'].errors['required']">Budget is required</div>  
+                   </div>
+                   </div>
+                   <div class="ml-5 col-md-3">
+                    <label for="budget type">Type <span style="color:red;">*</span></label>
+                    <select class="form-control form-select" id="budgettype" formControlName="budgettype"
+                    [ngClass]="{'is-invalid':(submitted && p['budgettype'].errors) ||(p['budgettype'].errors && p['budgettype'].touched)}">
+                        <option disabled>Select</option>
+                        <option value="perhour">perhour</option>
+                        <option value="permonth">permonth</option>
+                        <option value="onetimepay">onetimepay</option>
+                    </select>
+                    <div *ngIf="(submitted && p['budgettype'].errors) ||(p['budgettype'].errors && p['budgettype'].touched)" class="invalid-feedback">
+                      <div *ngIf="p['budgettype'].errors['required']">Type is required</div>  
+                 </div>
+                   </div>
+
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location">Details of the requirement<span style="color:red;">*</span></label>
+                    <textarea type="text-area" class="form-control" rows="5" id="details" formControlName="details"
+                    placeholder="Need home tutor for class 9 ICSE maths and science for 5 days weekly, 1.5hours daily. Timings can be 5 to 6:30pm.">
+                    </textarea>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="upload">Upload Document</label>
+                    <input cFormControl id="formFile" type="file" formControlName="document" />
+                  </div>
+
+                 <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                 </div>
+
+               </form>
+           
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ </div>
