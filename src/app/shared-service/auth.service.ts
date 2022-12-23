@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ShareUrl } from './app.url';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   private messageSource = new BehaviorSubject(0);
-  public domain='http://localhost:3000';
-//   public domain ='https://api.helpmetutors.com';
+  baserurl = ShareUrl.url
 
 
   currentMessage = this.messageSource.asObservable();
@@ -24,15 +24,15 @@ export class AuthService {
 
 
   contactEmail(body:any) {
-    return this.http.post(this.domain + '/mail/contact', body);
+    return this.http.post(this.baserurl + 'mail/contact', body);
     
   }
   parentEmail(body:any) {
-    return this.http.post(this.domain + '/mail/parent', body);
+    return this.http.post(this.baserurl + 'mail/parent', body);
     
   }
   teacherEmail(body:any) {
-     return this.http.post(this.domain + '/mail/teacher', body);
+     return this.http.post(this.baserurl + 'mail/teacher', body);
   }
 
 }

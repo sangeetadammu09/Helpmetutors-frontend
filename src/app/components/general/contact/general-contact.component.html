@@ -38,7 +38,9 @@
 					  [ngClass]="{'is-invalid': (submitted && f['phone'].errors) ||(f['phone'].errors && f['phone'].touched)}">
 					  <div *ngIf="(submitted && f['phone'].errors) ||(f['phone'].errors && f['phone'].touched)" class="invalid-feedback">
 						<div *ngIf="f['phone'].errors['required']">Contact is required</div>
-						<div *ngIf="f['phone'].errors['phone']">Contact is not valid</div>
+						<div *ngIf="f['phone'].errors['pattern']">Only Number are allowed</div>
+						<div *ngIf="f['phone'].errors['maxlength']">Only 10 digits are allowed</div>
+
 					 </div>
 				</div>
 				  </div>
@@ -73,3 +75,19 @@
 		</div>
 	</div>
 </div> 
+
+<!-- Modal -->
+
+<c-modal id="liveDemoModal" [visible]="visible" (visibleChange)="handleLiveDemoChange($event)">
+	<c-modal-header>
+	  <h5 cModalTitle>Confirmation</h5>
+	  <button (click)="toggleLiveDemo()" cButtonClose></button>
+	</c-modal-header>
+	<c-modal-body>
+	  <p>Your details are saved successfully</p>
+	  <p>We Will update you as soon as possible.</p>
+	</c-modal-body>
+	<c-modal-footer>
+	  <button (click)="toggleLiveDemo()" cButton >Okay</button>
+	</c-modal-footer>
+  </c-modal>

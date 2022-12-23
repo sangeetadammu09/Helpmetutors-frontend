@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/shared-service/auth.service';
 import { TeacherService } from '../../../shared-service/teacher.service';
@@ -15,18 +16,19 @@ export class TeacherFormComponent implements OnInit {
   submitted: boolean = false;
   modeofTeachingArr: any =[];
   modeValueArr: any =[];
+  public visible = false;
 
    // convenience getter for easy access to form fields
    get t() { return this.addTeacherForm.controls; };
 
 
-  constructor(private fb : FormBuilder, private teacherService : TeacherService, 
+  constructor(private fb : FormBuilder, private teacherService : TeacherService,  private router : Router,
     private toastrService : ToastrService, private authService : AuthService){
 
       this.addTeacherForm = this.fb.group({
         name : ['', Validators.required],
-        email : ['', Validators.required],
-        contact : ['', Validators.required],
+        email : ['', [Validators.required, Validators.email]],
+        contact : ['', [Validators.required, Validators.pattern('^[0-9,]*$'), Validators.maxLength(10)]],
         location : ['', Validators.required],
         qualification : ['', Validators.required],
         teaching : ['', Validators.required],
@@ -34,7 +36,7 @@ export class TeacherFormComponent implements OnInit {
         modeofteaching : ['', Validators.required],
         subjects : ['', Validators.required],
         timing : ['', Validators.required],
-        charge : ['', Validators.required],
+        charge : ['', [Validators.required, Validators.pattern('^[0-9,]*$')]],
         chargeType : ['', Validators.required],
         document: []
       
@@ -88,11 +90,12 @@ export class TeacherFormComponent implements OnInit {
       teacherObject.document = this.addTeacherForm.controls['document'].value;
        //console.log(teacherObject,'------------')
       this.teacherService.createteacher(teacherObject).subscribe((data:any) => {
-        if(data.Status == 200){
+        if(data.status == 200){
+          this.visible = !this.visible;
           this.authService.teacherEmail(teacherObject).subscribe((data:any) => {
            //console.log(data, 'email')
           });
-          this.toastrService.success('Your details are saved successfully')
+          //this.toastrService.success('Your details are saved successfully')
         }
         
       },(error:any) => {
@@ -105,5 +108,16 @@ export class TeacherFormComponent implements OnInit {
     }
 
 
+  }
+
+
+
+  toggleLiveDemo() {
+    this.visible = !this.visible;
+    this.router.navigate(['/'])
+  }
+
+  handleLiveDemoChange(event: any) {
+    this.visible = event;
   }
 }

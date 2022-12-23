@@ -61,6 +61,7 @@
                     <div *ngIf="(submitted && p['contact'].errors) ||(p['contact'].errors && p['contact'].touched)" class="invalid-feedback">
                         <div *ngIf="p['contact'].errors['required']">Contact is required</div>
                         <div *ngIf="p['contact'].errors['pattern']">Only Number are allowed</div>
+                        <div *ngIf="p['contact'].errors['maxlength']">Only 10 digits are allowed</div>
                    </div>
                   </div>
         
@@ -164,7 +165,8 @@
                     <input type="text" class="form-control" formControlName="budget" [ngClass]="{'is-invalid':
                     (submitted && p['budget'].errors) ||(p['budget'].errors && p['budget'].touched)}" />
                     <div *ngIf="(submitted && p['budget'].errors) ||(p['budget'].errors && p['budget'].touched)" class="invalid-feedback">
-                        <div *ngIf="p['budget'].errors['required']">Budget is required</div>  
+                        <div *ngIf="p['budget'].errors['required']">Budget is required</div> 
+                        <div *ngIf="p['budget'].errors['pattern']">Only Number are allowed</div> 
                    </div>
                    </div>
                    <div class="ml-5 col-md-3">
@@ -209,3 +211,18 @@
       </div>
     </div>
  </div>
+
+
+ <c-modal id="liveDemoModal" [visible]="visible" (visibleChange)="handleLiveDemoChange($event)">
+  <c-modal-header>
+    <h5 cModalTitle>Confirmation</h5>
+    <button (click)="toggleLiveDemo()" cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>
+    <p>Your requirement has been saved successfully</p>
+    <p>We Will update you as soon as possible.</p>
+  </c-modal-body>
+  <c-modal-footer>
+    <button (click)="toggleLiveDemo()" cButton >Okay</button>
+  </c-modal-footer>
+</c-modal>

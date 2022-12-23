@@ -11,8 +11,6 @@ export class ContactService {
 
   constructor(private _http: HttpClient) { }
 
-  
-
   createContact(contact: any){
     return this._http.post<any>(this.baserurl+'contact/form',contact)
   }

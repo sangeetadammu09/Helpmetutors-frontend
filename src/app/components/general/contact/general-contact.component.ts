@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ContactService } from '../../../shared-service/contact.service';
 import { AuthService } from '../../../shared-service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-general-contact',
@@ -15,15 +16,16 @@ export class GeneralContactComponent implements OnInit {
   submitted = false;
    // convenience getter for easy access to form fields
   get f() { return this.contactForm.controls; }
+  public visible = false;
 
-  constructor(private _formBuilder: FormBuilder, private authService : AuthService,
+  constructor(private _formBuilder: FormBuilder, private authService : AuthService,private router : Router,
     private contactService: ContactService,private toastrService : ToastrService) { }
 
   ngOnInit(): void {
     this.contactForm = this._formBuilder.group({  
       name: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      phone: [null, Validators.required],
+      phone:  ['', [Validators.required, Validators.pattern('^[0-9,]*$'), Validators.maxLength(10)]],
       subject: [null, Validators.required],
       message : [null, Validators.required],
       
@@ -44,8 +46,9 @@ export class GeneralContactComponent implements OnInit {
       // console.log(contactObject,'------------')
       this.contactService.createContact(contactObject).subscribe((data:any) => {
         //console.log(data)
-        this.toastrService.success('Query saved successfully');
+        //this.toastrService.success('Query saved successfully');
         if(data.status == 200){
+        this.visible = !this.visible;
         this.authService.contactEmail(contactObject).subscribe((data:any) => {
          // console.log(data, 'email')
         });
@@ -62,11 +65,14 @@ export class GeneralContactComponent implements OnInit {
 
     }
 
+    toggleLiveDemo() {
+      this.visible = !this.visible;
+      this.router.navigate(['/'])
+    }
+  
+    handleLiveDemoChange(event: any) {
+      this.visible = event;
+    }
+
 }
 
-
-@Component({
-  selector: 'thankyou-dialog',
-  templateUrl: 'thankyou-dialog.html',
-})
-export class ThankyouDialog {}

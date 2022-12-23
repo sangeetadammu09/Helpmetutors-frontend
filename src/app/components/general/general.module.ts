@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { RegisteredTutorsComponent } from './registered-tutors/registered-tutors.component';
 import { TeachingJobsComponent } from './teaching-jobs/teaching-jobs.component';
+import { SharedCustomModule } from 'src/app/shared.module';
 
 
 
@@ -30,13 +31,8 @@ import { TeachingJobsComponent } from './teaching-jobs/teaching-jobs.component';
   imports: [
     CommonModule,
     GeneralRoutingModule,
-    CardModule,
-    ButtonModule,
-    GridModule,
-    IconModule,
-    FormModule,FormsModule,
-    ReactiveFormsModule,NavModule,
-    CarouselModule,TabsModule
+    
+    SharedCustomModule
     
   ]
 })

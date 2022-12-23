@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/shared-service/auth.service';
 import { ParentService } from '../../../shared-service/parent.service';
@@ -13,17 +14,19 @@ export class ParentFormComponent implements OnInit {
 
   addParentForm!: FormGroup;
   submitted: boolean = false;
+  public visible = false;
 
    // convenience getter for easy access to form fields
    get p() { return this.addParentForm.controls; };
 
 
-  constructor(private fb : FormBuilder, private parentService : ParentService,private authService : AuthService,
+  constructor(private fb : FormBuilder, private parentService : ParentService,
+    private authService : AuthService, private router : Router,
      private toastrService : ToastrService){ 
       this.addParentForm = this.fb.group({
         name : ['', Validators.required],
-        email : ['', Validators.required],
-        contact : ['', Validators.required],
+        email : ['',[Validators.required, Validators.email]],
+        contact : ['', [Validators.required, Validators.pattern('^[0-9,]*$'), Validators.maxLength(10)]],
         location : ['', Validators.required],
         lookingfor : ['', Validators.required],
         grade : ['', Validators.required],
@@ -31,7 +34,7 @@ export class ParentFormComponent implements OnInit {
         details : [''],
         modeofteaching : ['', Validators.required],
         gender : ['', Validators.required],
-        budget : ['', Validators.required],
+        budget : ['', [Validators.required, Validators.pattern('^[0-9,]*$')]],
         budgettype : ['', Validators.required],
         document: []
       
@@ -62,12 +65,14 @@ export class ParentFormComponent implements OnInit {
      //  console.log(parentObject,'------------')
       this.parentService.createparent(parentObject).subscribe((data:any) => {
         //console.log(data)
-        if(data.Status == 200){
+        if(data.status == 200){
+          this.visible = !this.visible;
           this.authService.parentEmail(parentObject).subscribe((data:any) => {
           //  console.log(data, 'email')
+          
            
           });
-          this.toastrService.success('Requirement saved successfully')
+        //  this.toastrService.success('Requirement saved successfully')
         }
         
         
@@ -80,7 +85,17 @@ export class ParentFormComponent implements OnInit {
       return;
     }
 
+  }
 
+
+  toggleLiveDemo() {
+    this.visible = !this.visible;
+    this.router.navigate(['/'])
+  }
+
+
+  handleLiveDemoChange(event: any) {
+    this.visible = event;
   }
 
 }

@@ -44,7 +44,7 @@
                   (submitted && t['email'].errors) ||(t['email'].errors && t['email'].touched)}" />
                   <div *ngIf="(submitted && t['email'].errors) ||(t['email'].errors && t['email'].touched)" class="invalid-feedback">
                       <div *ngIf="t['email'].errors['required']">Email is required</div>
-                      <div *ngIf="t['email'].errors['pattern']">Email is invalid</div>
+                      <div *ngIf="t['email'].errors['email']">Email is not valid</div>
                  </div>
                 </div>
               
@@ -55,6 +55,7 @@
                   <div *ngIf="(submitted && t['contact'].errors) ||(t['contact'].errors && t['contact'].touched)" class="invalid-feedback">
                       <div *ngIf="t['contact'].errors['required']">Contact is required</div>
                       <div *ngIf="t['contact'].errors['pattern']">Only Number are allowed</div>
+                      <div *ngIf="t['contact'].errors['maxlength']">Only 10 digits are allowed</div>
                  </div>
                 </div>
       
@@ -138,7 +139,8 @@
                   <input type="text" class="form-control" formControlName="charge" [ngClass]="{'is-invalid':
                   (submitted && t['charge'].errors) ||(t['charge'].errors && t['charge'].touched)}" />
                   <div *ngIf="(submitted && t['charge'].errors) ||(t['charge'].errors && t['charge'].touched)" class="invalid-feedback">
-                      <div *ngIf="t['charge'].errors['required']">Charge is required</div>  
+                      <div *ngIf="t['charge'].errors['required']">Charge is required</div> 
+                      <div *ngIf="t['charge'].errors['pattern']">Only Number are allowed</div>  
                  </div>
                  </div>
                  <div class="ml-5 col-md-3">
@@ -183,4 +185,22 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- Modal -->
+
+<c-modal id="liveDemoModal" [visible]="visible" (visibleChange)="handleLiveDemoChange($event)">
+  <c-modal-header>
+    <h5 cModalTitle>Confirmation</h5>
+    <button (click)="toggleLiveDemo()" cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>
+    <p>Your details are saved successfully</p>
+    <p>We Will update you as soon as possible.</p>
+  </c-modal-body>
+  <c-modal-footer>
+    <button (click)="toggleLiveDemo()" cButton >Okay</button>
+  </c-modal-footer>
+</c-modal>
 
