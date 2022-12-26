@@ -26,8 +26,7 @@ const routes: Routes = [
           import('./components/general/general.module').then((m) => m.GeneralModule)
       },
       { path: 'parent-form',component: ParentFormComponent,data: {title: 'Parent Form'}},
-      { path: 'teacher-form',component: TeacherFormComponent,data: {title: 'Teacher Form'}},
-      {path: 'contact',component: GeneralContactComponent,data: {title: 'Contact'}},
+      { path: 'teacher-form',component: TeacherFormComponent,data: {title: 'Teacher Form'}}
       
       
     ]

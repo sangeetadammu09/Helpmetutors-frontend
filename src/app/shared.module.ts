@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -23,7 +24,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ButtonGroupModule,SidebarModule,SharedModule,TabsModule,ModalModule,
     ListGroupModule,ProgressModule,BadgeModule,CarouselModule,
     CardModule,HttpClientModule,FormsModule,ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule,NgxPaginationModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-center',
       preventDuplicates: true,
@@ -39,7 +40,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ButtonGroupModule,SidebarModule,SharedModule,TabsModule,ModalModule,
     ListGroupModule,ProgressModule,BadgeModule,CarouselModule,
     CardModule,HttpClientModule,FormsModule,ReactiveFormsModule,
-    ToastrModule
+    ToastrModule,NgxPaginationModule
     
   ],
   providers: [

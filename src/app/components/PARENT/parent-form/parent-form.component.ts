@@ -33,6 +33,9 @@ export class ParentFormComponent implements OnInit {
         subjects : ['', Validators.required],
         details : [''],
         modeofteaching : ['', Validators.required],
+        days: ['', Validators.required],
+        hours: ['', Validators.required],
+        time: ['', Validators.required],
         gender : ['', Validators.required],
         budget : ['', [Validators.required, Validators.pattern('^[0-9,]*$')]],
         budgettype : ['', Validators.required],
@@ -47,6 +50,7 @@ export class ParentFormComponent implements OnInit {
 
   submitParentForm(){
     this.submitted = true;
+    console.log(this.addParentForm.value)
     if(this.addParentForm.valid){
       var parentObject:any = {};
       parentObject.pname = this.addParentForm.controls['name'].value;
@@ -59,12 +63,15 @@ export class ParentFormComponent implements OnInit {
       parentObject.details = this.addParentForm.controls['details'].value;
       parentObject.modeofteaching = this.addParentForm.controls['modeofteaching'].value;
       parentObject.gender = this.addParentForm.controls['gender'].value;
+      parentObject.days = this.addParentForm.controls['days'].value;
+      parentObject.hours = this.addParentForm.controls['hours'].value;
+      parentObject.time = this.addParentForm.controls['time'].value;
       parentObject.budget = this.addParentForm.controls['budget'].value;
       parentObject.budgettype = this.addParentForm.controls['budgettype'].value;
       parentObject.document = this.addParentForm.controls['document'].value;
-     //  console.log(parentObject,'------------')
+      console.log(parentObject,'------------')
       this.parentService.createparent(parentObject).subscribe((data:any) => {
-        //console.log(data)
+        console.log(data)
         if(data.status == 200){
           this.visible = !this.visible;
           this.authService.parentEmail(parentObject).subscribe((data:any) => {

@@ -35,4 +35,9 @@ export class AuthService {
      return this.http.post(this.baserurl + 'mail/teacher', body);
   }
 
+
+  interestedteacherEmail(body:any) {
+    return this.http.post(this.baserurl + 'mail/appliedteacher', body);
+ }
+
 }

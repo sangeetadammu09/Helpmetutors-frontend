@@ -40,6 +40,11 @@ export class TeacherService {
   }
 
 
+  jobApplied(job:any){
+    return this._http.post<any>(this.baserurl+'teacher/applyjob',job)
+  }
+
+
    //Helper Methods
 
    setToken(token: string) {

@@ -80,8 +80,8 @@
                     <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="lookingfor"
                     [ngClass]="{'is-invalid':(submitted && p['lookingfor'].errors) ||(p['lookingfor'].errors && p['lookingfor'].touched)}">
                         <option disabled>Select</option>
-                         <option>Tutor</option>
-                        <option>Assignment Help</option>
+                         <option value="tutor">Tutor</option>
+                        <option value="assignment help">Assignment Help</option>
                     </select>
                     <div *ngIf="(submitted && p['lookingfor'].errors) ||(p['lookingfor'].errors && p['lookingfor'].touched)" class="invalid-feedback">
                       <div *ngIf="p['lookingfor'].errors['required']">Looking for is required</div>   
@@ -94,18 +94,18 @@
                     [ngClass]="{'is-invalid':(submitted && p['grade'].errors) ||(p['grade'].errors && p['grade'].touched)}">
                         <option disabled>Select</option>
                         <option value="nursery">Nursery, Kindergarten</option>
-                        <option value="class1">class 1</option>
-                        <option value="class2">class 2</option>
-                        <option value="class3">class 3</option>
-                        <option value="class4">class 4</option>
-                        <option value="class5">class 5</option>
-                        <option value="class6">class 6</option>
-                        <option value="class7">class 7</option>
-                        <option value="class8">class 8</option>
-                        <option value="class9">class 9</option>
-                        <option value="class10">class 10</option>
-                        <option value="class11">class 11</option>
-                        <option value="class12">class 12</option>
+                        <option value="class 1">class 1</option>
+                        <option value="class 2">class 2</option>
+                        <option value="class 3">class 3</option>
+                        <option value="class 4">class 4</option>
+                        <option value="class 5">class 5</option>
+                        <option value="class 6">class 6</option>
+                        <option value="class 7">class 7</option>
+                        <option value="class 8">class 8</option>
+                        <option value="class 9">class 9</option>
+                        <option value="class 10">class 10</option>
+                        <option value="class 11">class 11</option>
+                        <option value="class 12">class 12</option>
                         <option value="nursery">Intermediate</option>
                         <option value="diploma">Diploma</option>
                         <option value="undergraduate">Undergraduate</option>
@@ -130,13 +130,53 @@
                   </div>
 
                   <div class="col-md-6">
+                    <label for="location">No of days weekly<span style="color:red;">*</span></label>
+                    <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="days"
+                      [ngClass]="{'is-invalid':(submitted && p['days'].errors) ||(p['days'].errors && p['days'].touched)}">
+                        <option disabled>Select</option>
+                        <option value="1">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">6</option>
+                        
+                  
+                      </select>
+                    <div *ngIf="(submitted && p['days'].errors) ||(p['days'].errors && p['days'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['days'].errors['required']">No of days weekly is required</div>
+                       
+                   </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location">No of hours daily<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="hours" [ngClass]="{'is-invalid':
+                    (submitted && p['hours'].errors) ||(p['hours'].errors && p['hours'].touched)}" />
+                    <div *ngIf="(submitted && p['hours'].errors) ||(p['hours'].errors && p['hours'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['hours'].errors['required']">No of hours daily is required</div>
+                       
+                   </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location">Preferred Tuition Time<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" formControlName="time" placeholder="In between 4pm to 7pm"[ngClass]="{'is-invalid':
+                    (submitted && p['time'].errors) ||(p['time'].errors && p['time'].touched)}" />
+                    <div *ngIf="(submitted && p['time'].errors) ||(p['time'].errors && p['time'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['time'].errors['required']">Preferred Tuition Time is required</div>
+                       
+                   </div>
+                  </div>
+
+                  <div class="col-md-6">
                     <label for="modeofteaching">Mode Of Teaching<span style="color:red;">*</span></label>
                     <select  class="form-control form-select" id="modeofteaching" formControlName="modeofteaching"
                     [ngClass]="{'is-invalid':(submitted && p['modeofteaching'].errors) ||(p['modeofteaching'].errors && p['modeofteaching'].touched)}">
                       <option disabled>Select</option>
                       <option value="home">Home</option>
                       <option value="online">Online</option>
-                      <option value="tutorplace">Tutor's place</option>
+                      <option value="tutor place">Tutor's place</option>
                     
                     </select>
                     <div *ngIf="(submitted && p['modeofteaching'].errors) ||(p['modeofteaching'].errors && p['modeofteaching'].touched)" class="invalid-feedback">
@@ -174,9 +214,9 @@
                     <select class="form-control form-select" id="budgettype" formControlName="budgettype"
                     [ngClass]="{'is-invalid':(submitted && p['budgettype'].errors) ||(p['budgettype'].errors && p['budgettype'].touched)}">
                         <option disabled>Select</option>
-                        <option value="perhour">perhour</option>
-                        <option value="permonth">permonth</option>
-                        <option value="onetimepay">onetimepay</option>
+                        <option value="per hour">perhour</option>
+                        <option value="per month">permonth</option>
+                        <option value="one time pay">onetimepay</option>
                     </select>
                     <div *ngIf="(submitted && p['budgettype'].errors) ||(p['budgettype'].errors && p['budgettype'].touched)" class="invalid-feedback">
                       <div *ngIf="p['budgettype'].errors['required']">Type is required</div>  
@@ -186,18 +226,18 @@
                   </div>
 
                   <div class="col-md-6">
-                    <label for="location">Details of the requirement<span style="color:red;">*</span></label>
+                    <label for="location">Details of the requirement</label>
                     <textarea type="text-area" class="form-control" rows="5" id="details" formControlName="details"
                     placeholder="Need home tutor for class 9 ICSE maths and science for 5 days weekly, 1.5hours daily. Timings can be 5 to 6:30pm.">
                     </textarea>
                   </div>
 
                   <div class="col-md-6">
-                    <label for="upload">Upload Document</label>
+                    <label for="upload">Upload Document(if required)</label>
                     <input cFormControl id="formFile" type="file" formControlName="document" />
                   </div>
 
-                 <div class="modal-footer">
+                 <div class="modal-footer mb-3">
                         <button type="submit" class="btn btn-primary">Submit</button>
                  </div>
 
@@ -220,7 +260,7 @@
   </c-modal-header>
   <c-modal-body>
     <p>Your requirement has been saved successfully</p>
-    <p>We Will update you as soon as possible.</p>
+    <p>We will update you as soon as possible.</p>
   </c-modal-body>
   <c-modal-footer>
     <button (click)="toggleLiveDemo()" cButton >Okay</button>
