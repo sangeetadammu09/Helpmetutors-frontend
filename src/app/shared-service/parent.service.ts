@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {ShareUrl} from './app.url'
 
 @Injectable({
@@ -7,7 +7,8 @@ import {ShareUrl} from './app.url'
 })
 export class ParentService {
 
-  baserurl = ShareUrl.url
+  baserurl = ShareUrl.url;
+  
 
   constructor(private _http: HttpClient) { }
 
@@ -26,6 +27,11 @@ export class ParentService {
 
 
   listofparents(){
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const requestOptions: Object = {
+      headers: headers,
+      responseType: 'text'
+    }
     return this._http.get<{message:string,listofparents:any}>(this.baserurl+'parent/listofparents')
   }
 
