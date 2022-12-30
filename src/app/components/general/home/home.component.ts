@@ -24,13 +24,13 @@ export class HomeComponent implements OnInit {
     };
     this.slides[1] = {
       id: 1,
-      src: '/assets/images/hmt-image2.png',
+      src: '/assets/images/hmt-image3.png',
       title: 'We understand that being a parent doesnt get  enough time to help your child with studies ,our private tutor will take care of his studies.',
       subtitle: 'My son has been associated with Helpmetutors for more than two years now. He finished grade 9th cbse under the guidance of the tutor provided. I am happy to have enrolled here.- Tanuja(parent)'
     }
     this.slides[2] = {
       id: 2,
-      src: '/assets/images/hmt-image2.png',
+      src: '/assets/images/hmt-image4.png',
       title: 'Earn additional income... if you are ready teach part time. We will help you out',
       subtitle: 'So far my involvement in Helpmetutors has been amazing! The client support staff was very affable and accommodating when I posted an inquiry about making my profile.- Aditi(tutor)'
     }

@@ -113,156 +113,9 @@
   
   .jumbotron{
     margin-bottom: 4px;
-    //background-color: #ffff;
   }
 
-//   #hmt-primary{
-//       background-image: url(/assets/images/hmt-primary.png);
-//       background-size: cover;  
-//       background-repeat:   no-repeat;
-//       background-position: center center;
-//   }
-//   #hmt-primary:hover{
-//     //background-image: url(/assets/images/hmt-primary.png);
-//     background-color: gray;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
 
-
-
-
-//   #hmt-secondary{
-//     background-image: url(/assets/images/hmt-secondary.png);
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-// #hmt-highersecondary{
-//     background-image: url(/assets/images/hmt-highersecondary.png);
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// #hmt-undergraduate{
-//     background-image: url(/assets/images/hmt-undergraduate.png);
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// #hmt-postgraduate{
-//     background-image: url(/assets/images/hmt-postgraduate.png);
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-// .hmt-coding{
-//     background-image: url(/assets/images/hmt-coding.png);
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-// .hmt-competitive{
-//     background-image: url(/assets/images/hmt-comp.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-// .hmt-language{
-//     background-image: url(/assets/images/hmt-languages.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-// .hmt-other{
-//     background-image: url(/assets/images/hmt-test.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-
-
-// .hmt-art{
-//     background-image: url(/assets/images/hmt-art.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-
-// .hmt-dance{
-//     background-image: url(/assets/images/hmt-dance.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-sing{
-//     background-image: url(/assets/images/hmt-sing.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-music{
-//     background-image: url(/assets/images/hmt-music.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-draw{
-//     background-image: url(/assets/images/hmt-draw.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-digital{
-//     background-image: url(/assets/images/hmt-digital.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-career{
-//     background-image: url(/assets/images/hmt-career.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-special{
-//     background-image: url(/assets/images/hmt-special.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-kids{
-//     background-image: url(/assets/images/hmt-kids.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
-// .hmt-time{
-//     background-image: url(/assets/images/hmt-time.png);
-//     //background-color: tomato;
-//     background-size: cover;  
-//     background-repeat:   no-repeat;
-//     background-position: center center;
-// }
 
 .checked {
     color: orange;
@@ -271,10 +124,6 @@
 
 
 #hmt-viewall, .hmt-viewall{
-   // background-image: url(/assets/images/hmt-primary.png);
-    // background-size: cover;  
-    // background-repeat:   no-repeat;
-    // background-position: center center;
     background-color: grey;
 }
 
@@ -345,3 +194,37 @@
 .card-text{
     text-align: center;
 }
+
+@media only screen and  (min-width: 992px)  and (max-width: 1199px) {
+    .d-carousel h3{
+        font-size: 16px;
+   }
+ .d-carousel p{
+     font-size: 13px;
+  }
+
+  
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .d-carousel h3{
+           font-size: 16px;
+    }
+    .d-carousel p{
+        font-size: 13px;
+   }
+   .carousel-caption{
+    margin-bottom:1% ;
+}
+    
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .carousel-caption{
+        margin-bottom:-1% ;
+    }
+    .d-carousel h3{display:none}
+    .d-carousel p{font-size: 10px;} 
+}
+

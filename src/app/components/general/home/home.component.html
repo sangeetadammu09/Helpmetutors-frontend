@@ -1,10 +1,10 @@
 <div class="container-fluid hmt-container3">
-  <c-carousel>
+  <c-carousel [animate]="false" transition="crossfade">
     <c-carousel-indicators></c-carousel-indicators>
     <c-carousel-inner>
       <c-carousel-item *ngFor="let slide of slides">
-        <img alt="{{slide.title}}" class="d-block w-100" loading="lazy" src="{{slide.src}}" />
-        <c-carousel-caption class="d-none d-md-block">
+        <img alt="{{slide.title}}" class="d-block w-100"  src="{{slide.src}}" />
+        <c-carousel-caption class="d-md-block d-carousel">
           <h3>{{slide.title}}</h3>
           <p>{{slide.subtitle}}</p>
         </c-carousel-caption>

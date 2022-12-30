@@ -58,3 +58,7 @@
   .ml-auto, .mx-auto {
     margin-left: auto!important;
  }
+
+ .navbar-toggler:focus{
+    color: transparent;
+ }
