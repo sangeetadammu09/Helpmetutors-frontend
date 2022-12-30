@@ -31,9 +31,6 @@ const routes: Routes = [
       
     ]
   },
-
- 
- 
   {
     path: '404',
     component: Page404Component,
@@ -80,6 +77,7 @@ const routes: Routes = [
       scrollPositionRestoration: 'top',
       anchorScrolling: 'enabled',
       initialNavigation: 'enabledBlocking',
+      useHash: true
       // relativeLinkResolution: 'legacy'
     })
   ],
