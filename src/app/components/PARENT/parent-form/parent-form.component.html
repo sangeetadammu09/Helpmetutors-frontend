@@ -120,6 +120,25 @@
                   </div>
 
                   <div class="col-md-6">
+                    <label for="location">Board<span style="color:red;">*</span></label>
+                    <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="board"
+                    [ngClass]="{'is-invalid':(submitted && p['board'].errors) ||(p['board'].errors && p['board'].touched)}">
+                        <option disabled>Select</option>
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSE">ICSE</option>
+                        <option value="IGCSE">IGCSE</option>
+                        <option value="IB">IB</option>
+                        <option value="STATE">STATE</option>
+                        <option value="Other">Other</option>
+                       
+                      </select>
+                      <div *ngIf="(submitted && p['board'].errors) ||(p['board'].errors && p['board'].touched)" class="invalid-feedback">
+                        <div *ngIf="p['board'].errors['required']">Board is required</div>   
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-md-6">
                     <label for="location">Subjects<span style="color:red;">*</span></label>
                     <input type="text" class="form-control" formControlName="subjects" [ngClass]="{'is-invalid':
                     (submitted && p['subjects'].errors) ||(p['subjects'].errors && p['subjects'].touched)}" />
@@ -135,11 +154,10 @@
                       [ngClass]="{'is-invalid':(submitted && p['days'].errors) ||(p['days'].errors && p['days'].touched)}">
                         <option disabled>Select</option>
                         <option value="1">1</option>
-                        <option value="3">2</option>
-                        <option value="4">3</option>
-                        <option value="5">4</option>
-                        <option value="6">5</option>
-                        <option value="7">6</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                         
                   
                       </select>
@@ -214,9 +232,9 @@
                     <select class="form-control form-select" id="budgettype" formControlName="budgettype"
                     [ngClass]="{'is-invalid':(submitted && p['budgettype'].errors) ||(p['budgettype'].errors && p['budgettype'].touched)}">
                         <option disabled>Select</option>
-                        <option value="per hour">perhour</option>
-                        <option value="per month">permonth</option>
-                        <option value="one time pay">onetimepay</option>
+                        <option value="per hour">per hour</option>
+                        <option value="per month">per month</option>
+                        <option value="one time pay">one time pay</option>
                     </select>
                     <div *ngIf="(submitted && p['budgettype'].errors) ||(p['budgettype'].errors && p['budgettype'].touched)" class="invalid-feedback">
                       <div *ngIf="p['budgettype'].errors['required']">Type is required</div>  

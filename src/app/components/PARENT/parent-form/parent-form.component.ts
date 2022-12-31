@@ -30,6 +30,7 @@ export class ParentFormComponent implements OnInit {
         location : ['', Validators.required],
         lookingfor : ['', Validators.required],
         grade : ['', Validators.required],
+        board : ['', Validators.required],
         subjects : ['', Validators.required],
         details : [''],
         modeofteaching : ['', Validators.required],
@@ -59,6 +60,7 @@ export class ParentFormComponent implements OnInit {
       parentObject.location = this.addParentForm.controls['location'].value;
       parentObject.lookingfor = this.addParentForm.controls['lookingfor'].value;
       parentObject.grade = this.addParentForm.controls['grade'].value;
+      parentObject.board = this.addParentForm.controls['board'].value;
       parentObject.subjects = this.addParentForm.controls['subjects'].value;
       parentObject.details = this.addParentForm.controls['details'].value;
       parentObject.modeofteaching = this.addParentForm.controls['modeofteaching'].value;
