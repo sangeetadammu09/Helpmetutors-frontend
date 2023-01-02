@@ -67,13 +67,15 @@
         
                   <div class="col-md-6">
                     <label for="location">Location<span style="color:red;">*</span></label>
-                    <input type="text" class="form-control" formControlName="location" [ngClass]="{'is-invalid':
+                    <input type="text" class="form-control" formControlName="location"  [ngClass]="{'is-invalid':
                     (submitted && p['location'].errors) ||(p['location'].errors && p['location'].touched)}" />
                     <div *ngIf="(submitted && p['location'].errors) ||(p['location'].errors && p['location'].touched)" class="invalid-feedback">
                         <div *ngIf="p['location'].errors['required']">Location is required</div>
                        
                    </div>
                   </div>
+                  <!-- ngx-google-places-autocomplete [options]=
+                    'options' (onAddressChange)="AddressChange($event)" -->
 
                   <div class="col-md-6">
                     <label for="location">Looking for<span style="color:red;">*</span></label>

@@ -22,7 +22,7 @@ export class RegisteredTutorsComponent implements OnInit {
    // Pagination parameters.
    page: number = 1;
   count: number = 0;
-  tableSize: number = 5;
+  tableSize: number = 6;
  
 
    // convenience getter for easy access to form fields
@@ -47,6 +47,11 @@ export class RegisteredTutorsComponent implements OnInit {
     this.teacherService.listofteachers().subscribe((data:any) => {
       console.log(data)
      if(data.status == 200){
+      data.listofteachers.forEach((item:any)=>{
+        var modeofteaching = item.modeofteaching;
+        modeofteaching = Object.assign({},modeofteaching);
+      })
+      
       this.listofTeachers = data.listofteachers;
      }
       

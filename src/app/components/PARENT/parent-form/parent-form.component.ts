@@ -15,6 +15,9 @@ export class ParentFormComponent implements OnInit {
   addParentForm!: FormGroup;
   submitted: boolean = false;
   public visible = false;
+  formattedaddress:any;
+  options:any;
+
 
    // convenience getter for easy access to form fields
    get p() { return this.addParentForm.controls; };
@@ -46,7 +49,11 @@ export class ParentFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+    this.options={
+      componentRestrictions:{
+      country:["AU"]
+      }
+  }
   }
 
   submitParentForm(){
@@ -106,5 +113,11 @@ export class ParentFormComponent implements OnInit {
   handleLiveDemoChange(event: any) {
     this.visible = event;
   }
+
+  
+public AddressChange(address: any) {
+//setting address from API to local variable
+this.formattedaddress=address.formatted_address
+}
 
 }

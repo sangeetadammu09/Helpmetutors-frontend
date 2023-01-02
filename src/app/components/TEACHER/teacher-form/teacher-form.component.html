@@ -81,13 +81,15 @@
 
                 <div class="col-md-6">
                   <label for="exampleInputEmail1">Teaching Experience<span style="color:red;">*</span></label>
-                  
                   <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="teaching"
                   [ngClass]="{'is-invalid':(submitted && t['teaching'].errors) ||(t['teaching'].errors && t['teaching'].touched)}">
                       <option disabled>Select</option>
-                      <option>0-5years</option>
+                      <option>0-2years</option>
+                      <option>2-4years</option>
+                      <option>4-6years</option>
+                      <option>6-8years</option>
+                      <option>8-10years</option>
                       <option>10-15years</option>
-                      <option>15-20years</option>
                       <option>more than 20years</option>
                   </select>
                   <div *ngIf="(submitted && t['teaching'].errors) ||(t['teaching'].errors && t['teaching'].touched)" class="invalid-feedback">
@@ -132,6 +134,29 @@
                   
                 </div>
 
+                <div class="col-md-6">
+                  <label for="exampleInputEmail1">Have Vehicle<span style="color:red;">*</span></label>
+                  <select class="form-control form-select" id="exampleFormControlSelect1" formControlName="vehicle"
+                  [ngClass]="{'is-invalid':(submitted && t['vehicle'].errors) ||(t['vehicle'].errors && t['vehicle'].touched)}">
+                      <option disabled>Select</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>  
+                  </select>
+                  <div *ngIf="(submitted && t['vehicle'].errors) ||(t['vehicle'].errors && t['vehicle'].touched)" class="invalid-feedback">
+                    <div *ngIf="t['vehicle'].errors['required']">Mode of Transport is required</div>   
+                </div>  
+                </div>
+
+                <div class="col-md-6">
+                  <label for="exampleInputEmail1">Mention five Preferred Locations<span style="color:red;">*</span></label>
+                  <input type="text" class="form-control" formControlName="preferredlocation" [ngClass]="{'is-invalid':
+                  (submitted && t['preferredlocation'].errors) ||(t['preferredlocation'].errors && t['preferredlocation'].touched)}" />
+                  <div *ngIf="(submitted && t['preferredlocation'].errors) ||(t['preferredlocation'].errors && t['preferredlocation'].touched)" class="invalid-feedback">
+                      <div *ngIf="t['preferredlocation'].errors['required']">Preferred Location is required</div>
+                     
+                 </div>
+                </div>
+
 
                 <div class="col-md-6 d-flex">
                   <div class="col-md-8">
@@ -148,9 +173,9 @@
                   <select class="form-control form-select" id="budgettype" formControlName="chargeType"
                   [ngClass]="{'is-invalid':(submitted && t['chargeType'].errors) ||(t['chargeType'].errors && t['chargeType'].touched)}">
                       <option disabled>Select</option>
-                      <option value="perhour">perhour</option>
-                      <option value="permonth">permonth</option>
-                      <option value="onetimepay">onetimepay</option>
+                      <option value="per hour">per hour</option>
+                      <option value="per month">per month</option>
+                      <option value="one time pay">one time pay</option>
                   </select>
                   <div *ngIf="(submitted && t['chargeType'].errors) ||(t['chargeType'].errors && t['chargeType'].touched)" class="invalid-feedback">
                     <div *ngIf="t['chargeType'].errors['required']">Type is required</div>  

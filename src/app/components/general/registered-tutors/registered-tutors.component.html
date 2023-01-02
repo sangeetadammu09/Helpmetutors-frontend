@@ -1,48 +1,57 @@
-<c-container>
-    <!-- <c-row class="align-items-start">
-     Search Filters Here...
-    </c-row> -->
-    <c-row class="align-items-start">
-      <c-col class="col-lg-9">
-        <c-row>
-            <c-col class="d-flex">
-                <c-card class="col-lg-4 mb-2 p-2 card-margin" *ngFor="let item of listofTeachers | paginate
-                : { itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
-                    <!-- <img cCardImg="top" src="/assets/images/hmt-image1.png"> -->
-                    <c-card-body>
-                      <h5 cCardTitle>{{item.tname}}</h5>
-                      <p> <b>Qualification:</b> {{item.qualification}}</p>
-                      <p  *ngFor="let data of item.modeofteaching"> <b>Modeofteaching:</b> {{data}}</p>
-                      <p> <b>Teaching Experience :</b> {{item.teachingexp}}</p>
-                      <p> <b>Location :</b> {{item.location}}</p>
-                      <p> <b>Specialized in:</b> {{item.subjects}}</p>
-                      <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" (click)="clickToApply(item)">ShortList</button>
-                     </div>
-                     
-                    </c-card-body>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="row">
+        <!-- <c-card class="col-md-4 mb-2 p-2 card-margin" *ngFor="let item of listofTeachers | paginate
+        : { itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
+            
+            <c-card-body>
+              <h5 cCardTitle>{{item.tname}}</h5>
+              <p> <b>Qualification:</b> {{item.qualification}}</p>
+              <p  *ngFor="let data of item.modeofteaching"> <b>Modeofteaching:</b> {{data}}</p>
+              <p> <b>Teaching Experience :</b> {{item.teachingexp}}</p>
+              <p> <b>Location :</b> {{item.location}}</p>
+              <p> <b>Specialized in:</b> {{item.subjects}}</p>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" (click)="clickToApply(item)">ShortList</button>
+             </div>      
+            </c-card-body>   
+             <img cCardImg="top" src="/assets/images/hmt-image1.png">   
+        </c-card> -->
+        <div class="col-md-4 mb-2 p-2 mt-2" *ngFor="let item of listofTeachers | paginate
+        : { itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index">
+        <div class="card">
+          <div class="card-body">
+            <h5 cCardTitle>{{item.tname}}</h5>
+              <p> <b>Qualification:</b> {{item.qualification}}</p>
+              <p> <b>Modeofteaching:</b> {{item.modeofteaching}}</p>
+              <p> <b>Teaching Experience :</b> {{item.teachingexp}}</p>
+              <p> <b>Location :</b> {{item.location}}</p>
+              <p> <b>Specialized in:</b> {{item.subjects}}</p>
+              <p> <b>Have Vehicle:</b> {{item.vehicle}}</p>
+              <p> <b>Preferred Locations:</b> {{item.preferredlocation}}</p>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" (click)="clickToApply(item)">ShortList</button>
+             </div>  
+          </div>
 
-                   
-                </c-card>
-               
-            </c-col>
-          </c-row>
-      </c-col>
-      <c-col class="col-lg-3 text-center">Google Ads here</c-col>
-    </c-row>
+        </div>
+        </div>
 
-    <!--Including the pagination control.-->
-    <div class="d-flex justify-content-center">
-      <pagination-controls
-        previousLabel="Prev"
-        nextLabel="Next"
-        (pageChange)="onTableDataChange($event)"
-      >
-      </pagination-controls>
-    </div>          
+      <!-- <div class="col-md-3">Google Ads here</div> -->
+    </div>
+    
+  </div>
+   <!--Including the pagination control.-->
+   <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div> 
+</div>
    
-  </c-container>
-
 
   <!-- Job applied Modal -->
  <c-modal id="liveDemoModal" [visible]="visible" (visibleChange)="handleLiveDemoChange($event)">

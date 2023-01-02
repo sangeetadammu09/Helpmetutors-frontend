@@ -36,6 +36,8 @@ export class TeacherFormComponent implements OnInit {
         modeofteaching : ['', Validators.required],
         subjects : ['', Validators.required],
         timing : ['', Validators.required],
+        vehicle : ['', Validators.required],
+        preferredlocation : ['', Validators.required],
         charge : ['', [Validators.required, Validators.pattern('^[0-9,]*$')]],
         chargeType : ['', Validators.required],
         document: []
@@ -85,6 +87,8 @@ export class TeacherFormComponent implements OnInit {
       teacherObject.modeofteaching = this.modeValueArr;
       teacherObject.subjects = this.addTeacherForm.controls['subjects'].value;
       teacherObject.timing = this.addTeacherForm.controls['timing'].value;
+      teacherObject.vehicle = this.addTeacherForm.controls['vehicle'].value;
+      teacherObject.preferredlocation = this.addTeacherForm.controls['preferredlocation'].value;
       teacherObject.charge = this.addTeacherForm.controls['charge'].value;
       teacherObject.chargeType = this.addTeacherForm.controls['chargeType'].value;
       teacherObject.document = this.addTeacherForm.controls['document'].value;

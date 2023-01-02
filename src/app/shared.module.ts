@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
+//import for GooglePlaceModule
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -24,7 +26,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ButtonGroupModule,SidebarModule,SharedModule,TabsModule,ModalModule,
     ListGroupModule,ProgressModule,BadgeModule,CarouselModule,
     CardModule,HttpClientModule,FormsModule,ReactiveFormsModule,
-    HttpClientModule,NgxPaginationModule,
+    HttpClientModule,NgxPaginationModule,GooglePlaceModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-center',
       preventDuplicates: true,
@@ -40,7 +42,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ButtonGroupModule,SidebarModule,SharedModule,TabsModule,ModalModule,
     ListGroupModule,ProgressModule,BadgeModule,CarouselModule,
     CardModule,HttpClientModule,FormsModule,ReactiveFormsModule,
-    ToastrModule,NgxPaginationModule
+    ToastrModule,NgxPaginationModule,GooglePlaceModule
     
   ],
   providers: [
