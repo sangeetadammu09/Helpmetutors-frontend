@@ -1,0 +1,25 @@
+.fa-user:before, .fa-money:before, .fa-bars:before, .menu-title{
+    color:black !important;
+}
+
+.nav .active{
+    background: black !important;
+}
+
+.simple-text{
+    font-weight:bold;
+}
+
+
+.menu-li a{
+    font-size:14px;
+}
+
+.menu-title{
+    color: black !important;
+}
+
+i{
+    color: black !important; 
+}
+

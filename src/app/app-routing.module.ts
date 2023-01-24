@@ -1,34 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GeneralLayoutComponent } from './general-containers';
-import { ParentLayoutComponent } from './parent-container';
+import { AdminLayoutComponent } from './admin-layout/default-layout/default-layout.component';
+import { GeneralLayoutComponent } from './common-layout';
 import { Page404Component } from './components/pages/page404/page404.component';
-import { ParentFormComponent } from './components/PARENT/parent-form/parent-form.component';
-import { TeacherFormComponent } from './components/TEACHER/teacher-form/teacher-form.component';
-import { GeneralContactComponent } from './components/general/contact/general-contact.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
     path: '',
     component: GeneralLayoutComponent,
-    data: {
-      title: 'Home'
-    },
     children: [  
       {
-        path: 'home',
+        path: 'login',
         loadChildren: () =>
-          import('./components/general/general.module').then((m) => m.GeneralModule)
-      },
-      { path: 'parent-form',component: ParentFormComponent,data: {title: 'Parent Form'}},
-      { path: 'teacher-form',component: TeacherFormComponent,data: {title: 'Teacher Form'}}
-      
-      
+          import('./components/common/general.module').then((m) => m.GeneralModule)
+      },   
     ]
   },
   {
@@ -38,36 +28,20 @@ const routes: Routes = [
       title: 'Page 404'
     }
   },
-  //parent dashboard
+  //admin dashboard
   {
-    path: 'parent', component: ParentLayoutComponent,
-    data: {
-      title: 'Parent Dashboard'
-    },
+    path: 'admin', component: AdminLayoutComponent,
+   
     children: [
       {
         path: 'dashboard',
         loadChildren: () =>
-          import('./components/PARENT/parent.module').then((m) => m.ParentModule)
+          import('./components/Admin/admin.module').then((m) => m.AdminModule)
       },
       
     ]
   },
-  //teacher dashboard
-  // {
-  //   path: 'teacher', component: DefaultLayoutComponent,
-  //   data: {
-  //     title: 'Parent Dashboard'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'dashboard',
-  //       loadChildren: () =>
-  //         import('./views/PARENT/parent.module').then((m) => m.ParentModule)
-  //     },
-      
-  //   ]
-  // },
+  
   {path: '**', redirectTo: '404'}
 ];
 

@@ -9,18 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Import containers
-import {DefaultFooterComponent,DefaultHeaderComponent,DefaultLayoutComponent} from './containers';
-import {GeneralFooterComponent,GeneralHeaderComponent,GeneralLayoutComponent} from './general-containers';
-import {ParentFooterComponent,ParentHeaderComponent,ParentLayoutComponent} from './parent-container';
+import {DefaultFooterComponent,DefaultHeaderComponent,AdminLayoutComponent} from './admin-layout';
+import {GeneralFooterComponent,GeneralHeaderComponent,GeneralLayoutComponent} from './common-layout';
 
 import {SharedCustomModule} from './shared.module';
-import {TeacherModule} from './components/TEACHER/teacher.module';
-import { ParentModule } from './components/PARENT/parent.module';
 
 const APP_CONTAINERS = [
-  DefaultFooterComponent,DefaultHeaderComponent,DefaultLayoutComponent,
+  DefaultFooterComponent,DefaultHeaderComponent,AdminLayoutComponent,
   GeneralHeaderComponent,GeneralFooterComponent,GeneralLayoutComponent,
-  ParentFooterComponent,ParentHeaderComponent,ParentLayoutComponent
 ];
 
 @NgModule({
@@ -29,7 +25,7 @@ const APP_CONTAINERS = [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedCustomModule, TeacherModule, ParentModule
+    SharedCustomModule,
   ],
 
   bootstrap: [AppComponent],

@@ -1,0 +1,52 @@
+export const UserList = {
+    statusCode: 200,
+    data: [
+      {
+        id: 0,
+        Name: 'Document 1',
+        date: '19 Jan 12:45 AM',
+        sharedby: 'Srikanta | Landlord',
+        validdate: '20 Jan 12:45 AM',
+        action: '',
+        isActive: false,
+      },
+      {
+        id: 0,
+        Name: 'Document 2',
+        date: '19 Jan 12:45 AM',
+        sharedby: 'Srikanta | Landlord',
+        validdate: '20 Jan 12:45 AM',
+        action: '',
+        isActive: true,
+      },
+      {
+        id: 0,
+        Name: 'Document 3',
+        date: '19 Jan 12:45 AM',
+        sharedby: 'Srikanta | Landlord',
+        validdate: '20 Jan 12:45 AM',
+        action: '',
+        isActive: false,
+      },
+      {
+        id: 0,
+        Name: 'Document 4',
+        date: '19 Jan 12:45 AM',
+        sharedby: 'Srikanta | Landlord',
+        validdate: '20 Jan 12:45 AM',
+        action: '',
+        isActive: false,
+      },
+      // {
+      //   id: 0,
+      //   firstName: 'Lokeshwari',
+      //   lastName: 'G',
+      //   email: 'lokeshwari@gmail.com',
+      //   contact: '12345678',
+      //   role: 'CCO',
+      //   isActive: false,
+      // },
+      
+    ],
+    message: null,
+  };

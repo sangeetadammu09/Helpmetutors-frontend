@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: Arial, sans-serif;
+}
+
+
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background:  rgb(21, 21, 20) !important;
+    color: yellow !important;
+}
+
+.btn-primary {
+    background-color: rgb(21, 21, 20) !important;
+}
+
+
+
+.navbar-brand{
+    color: yellow !important;
+}
+
+
+

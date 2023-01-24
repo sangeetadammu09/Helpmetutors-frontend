@@ -1,0 +1,24 @@
+
+.login,
+
+
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('../../../assets/img/Data_security_05.jpg');
+  background-size: cover;
+  
+  background-position: center center;
+}
+.btn-warning{
+  background-color: orange;
+  color: black;
+}
+.h3{
+  text-align: center;
+}
+.pull-right{
+  letter-spacing: 0.3em;
+}

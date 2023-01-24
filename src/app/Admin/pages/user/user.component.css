@@ -1,0 +1,19 @@
+
+.card{
+    border-radius: 0px;
+}
+
+tbody tr td, thead tr th{
+    text-align: center;
+}
+
+.border-none{
+     border-top : none;
+}
+
+.user-title{
+    border-bottom: 2px solid grey;
+}
+
+
+

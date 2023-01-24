@@ -1,0 +1,16 @@
+
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a  class="simple-text text-center">
+       <span #colotext>R e n t e n</span> p e
+      </a>
+  </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="menu-li">
+            <a [routerLink]="[menuItem.path]">
+                <i  class="{{menuItem.class}}"></i>
+                <span class="menu-title">{{menuItem.title}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
